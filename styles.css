@@ -464,6 +464,34 @@ footer {
     border-top: 2px solid #e5e7eb;
 }
 
+/* Loading Spinner Styles */
+.profile-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(200, 155, 60, 0.2);
+    border-top-color: #c89b3c;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.profile-loading p {
+    margin-top: 20px;
+    color: #a0a0a0;
+    font-size: 16px;
+}
+
 .lol-account-section h3 {
     color: #232f3e;
     font-size: 28px;
@@ -666,9 +694,20 @@ footer {
     font-size: 14px;
 }
 
+.match-mode {
+    color: #94a3b8;
+    font-size: 12px;
+    margin-top: 2px;
+}
+
 .match-stats {
     text-align: right;
     min-width: 80px;
+}
+
+.kda-ratio {
+    color: #c89b3c;
+    font-weight: 600;
 }
 
 .match-stats p {

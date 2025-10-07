@@ -24,112 +24,35 @@
         <!-- League of Legends Account Info -->
         <div class="lol-account-section">
           <h3>My League of Legends Profile</h3>
-          <div class="lol-profile-container">
-            <!-- Summoner Info Card -->
-            <div class="lol-summoner-card">
-              <div class="summoner-header">
-                <div class="summoner-icon">
-                  <img src="https://via.placeholder.com/100x100/c89b3c/ffffff?text=Icon" alt="Summoner Icon" />
-                </div>
-                <div class="summoner-details">
-                  <h4 class="summoner-name">Hide on bush</h4>
-                  <p class="summoner-tag">#KR1</p>
-                  <p class="summoner-level">Level 537</p>
-                </div>
-              </div>
-            </div>
 
-            <!-- Rank Info Card -->
-            <div class="lol-rank-card">
-              <div class="rank-header">
-                <img src="https://via.placeholder.com/120x120/c89b3c/ffffff?text=Rank" alt="Rank Emblem" class="rank-emblem" />
-                <div class="rank-details">
-                  <h4>Ranked Solo/Duo</h4>
-                  <p class="rank-tier">Challenger</p>
-                  <p class="rank-lp">1,247 LP</p>
-                  <p class="rank-winrate">234W 189L (55.3%)</p>
-                </div>
-              </div>
-            </div>
+          <!-- Loading Spinner -->
+          <div id="profile-loading" class="profile-loading">
+            <div class="spinner"></div>
+            <p>Loading profile data...</p>
           </div>
 
-          <!-- Recent Match History -->
-          <div class="match-history">
-            <h4>Recent Matches</h4>
-            <div class="matches-container">
-              <div class="match-card win">
-                <div class="match-result">Victory</div>
-                <div class="match-info">
-                  <img src="https://via.placeholder.com/48x48/c89b3c/ffffff?text=C" alt="Champion" class="match-champion-icon" />
-                  <div class="match-details">
-                    <p class="champion-name">Yasuo</p>
-                    <p class="match-kda">12 / 3 / 8</p>
+          <!-- Profile Content -->
+          <div id="profile-content" style="display: none;">
+            <div class="lol-profile-container">
+              <!-- Summoner Info Card -->
+              <div class="lol-summoner-card">
+                <div class="summoner-header">
+                  <div class="summoner-icon">
+                    <img id="summoner-icon" src="https://via.placeholder.com/100x100/c89b3c/ffffff?text=Icon" alt="Summoner Icon" />
                   </div>
-                </div>
-                <div class="match-stats">
-                  <p>23m 14s</p>
-                  <p class="match-date">2 hours ago</p>
+                  <div class="summoner-details">
+                    <h4 class="summoner-name">seandk</h4>
+                    <p class="summoner-tag">#OCE</p>
+                    <p id="summoner-level" class="summoner-level">Level 456</p>
+                  </div>
                 </div>
               </div>
+            </div>
 
-              <div class="match-card loss">
-                <div class="match-result">Defeat</div>
-                <div class="match-info">
-                  <img src="https://via.placeholder.com/48x48/c89b3c/ffffff?text=C" alt="Champion" class="match-champion-icon" />
-                  <div class="match-details">
-                    <p class="champion-name">Zed</p>
-                    <p class="match-kda">8 / 7 / 4</p>
-                  </div>
-                </div>
-                <div class="match-stats">
-                  <p>31m 42s</p>
-                  <p class="match-date">5 hours ago</p>
-                </div>
-              </div>
-
-              <div class="match-card win">
-                <div class="match-result">Victory</div>
-                <div class="match-info">
-                  <img src="https://via.placeholder.com/48x48/c89b3c/ffffff?text=C" alt="Champion" class="match-champion-icon" />
-                  <div class="match-details">
-                    <p class="champion-name">Akali</p>
-                    <p class="match-kda">15 / 2 / 6</p>
-                  </div>
-                </div>
-                <div class="match-stats">
-                  <p>28m 03s</p>
-                  <p class="match-date">1 day ago</p>
-                </div>
-              </div>
-
-              <div class="match-card win">
-                <div class="match-result">Victory</div>
-                <div class="match-info">
-                  <img src="https://via.placeholder.com/48x48/c89b3c/ffffff?text=C" alt="Champion" class="match-champion-icon" />
-                  <div class="match-details">
-                    <p class="champion-name">Yone</p>
-                    <p class="match-kda">10 / 5 / 12</p>
-                  </div>
-                </div>
-                <div class="match-stats">
-                  <p>35m 21s</p>
-                  <p class="match-date">1 day ago</p>
-                </div>
-              </div>
-
-              <div class="match-card loss">
-                <div class="match-result">Defeat</div>
-                <div class="match-info">
-                  <img src="https://via.placeholder.com/48x48/c89b3c/ffffff?text=C" alt="Champion" class="match-champion-icon" />
-                  <div class="match-details">
-                    <p class="champion-name">LeBlanc</p>
-                    <p class="match-kda">6 / 9 / 5</p>
-                  </div>
-                </div>
-                <div class="match-stats">
-                  <p>26m 47s</p>
-                  <p class="match-date">2 days ago</p>
-                </div>
+            <!-- Recent Match History -->
+            <div class="match-history">
+              <h4>Recent Matches</h4>
+              <div id="matches-container" class="matches-container">
               </div>
             </div>
           </div>
@@ -277,9 +200,138 @@
     <script>
       // League Data Lookup - Calls Riot API via Lambda
       const RIOT_API_URL =
-        'https://uj2tjezxirzjz3jupprboi3s7a0qfcxd.lambda-url.ap-southeast-2.on.aws/'; // Replace with your Function URL
+        'https://uj2tjezxirzjz3jupprboi3s7a0qfcxd.lambda-url.ap-southeast-2.on.aws/'; // For lookup functionality
+      const PROFILE_DATA_URL =
+        'https://xwy2qmro3ah5dslbcksiwa5b7y0hcoqy.lambda-url.ap-southeast-2.on.aws/'; // For profile data
+
+      // Stub data to use as fallback
+      const STUB_DATA = {
+        summoner: {
+          level: 456,
+          profileIconId: 6316
+        },
+        recentMatches: [
+          {
+            matchId: "OC1_680586112",
+            gameMode: "ARAM",
+            gameDuration: 1143,
+            championName: "Naafiri",
+            kills: 18,
+            deaths: 9,
+            assists: 22,
+            win: true,
+            kda: "4.44"
+          },
+          {
+            matchId: "OC1_680579732",
+            gameMode: "ARAM",
+            gameDuration: 1215,
+            championName: "JarvanIV",
+            kills: 11,
+            deaths: 10,
+            assists: 41,
+            win: false,
+            kda: "5.20"
+          },
+          {
+            matchId: "OC1_680580037",
+            gameMode: "ARAM",
+            gameDuration: 836,
+            championName: "Yasuo",
+            kills: 11,
+            deaths: 6,
+            assists: 22,
+            win: true,
+            kda: "5.50"
+          },
+          {
+            matchId: "OC1_680575540",
+            gameMode: "ARAM",
+            gameDuration: 1044,
+            championName: "Ryze",
+            kills: 15,
+            deaths: 7,
+            assists: 6,
+            win: false,
+            kda: "3.00"
+          },
+          {
+            matchId: "OC1_680574547",
+            gameMode: "ARAM",
+            gameDuration: 994,
+            championName: "Sion",
+            kills: 10,
+            deaths: 7,
+            assists: 21,
+            win: true,
+            kda: "4.43"
+          }
+        ]
+      };
+
+      // Load profile data on page load
+      async function loadProfileData() {
+        try {
+          const response = await fetch(PROFILE_DATA_URL);
+          const data = await response.json();
+
+          if (response.ok && data.body) {
+            const parsedData = JSON.parse(data.body);
+            displayProfileData(parsedData);
+          } else {
+            throw new Error('Failed to fetch profile data');
+          }
+        } catch (error) {
+          console.error('Error loading profile:', error);
+          // Use stub data on error
+          displayProfileData(STUB_DATA);
+        }
+      }
+
+      function displayProfileData(data) {
+        // Hide loading spinner
+        document.getElementById('profile-loading').style.display = 'none';
+
+        // Update summoner level
+        document.getElementById('summoner-level').textContent = `Level ${data.summoner.level}`;
+
+        // Update summoner icon
+        const iconUrl = `https://ddragon.leagueoflegends.com/cdn/14.1.1/img/profileicon/${data.summoner.profileIconId}.png`;
+        document.getElementById('summoner-icon').src = iconUrl;
+
+        // Display matches
+        const matchesContainer = document.getElementById('matches-container');
+        matchesContainer.innerHTML = data.recentMatches.map(match => {
+          const minutes = Math.floor(match.gameDuration / 60);
+          const seconds = match.gameDuration % 60;
+          const duration = `${minutes}m ${seconds}s`;
+
+          return `
+            <div class="match-card ${match.win ? 'win' : 'loss'}">
+              <div class="match-result">${match.win ? 'Victory' : 'Defeat'}</div>
+              <div class="match-info">
+                <img src="https://via.placeholder.com/48x48/c89b3c/ffffff?text=${match.championName[0]}" alt="${match.championName}" class="match-champion-icon" />
+                <div class="match-details">
+                  <p class="champion-name">${match.championName}</p>
+                  <p class="match-kda">${match.kills} / ${match.deaths} / ${match.assists}</p>
+                  <p class="match-mode">${match.gameMode}</p>
+                </div>
+              </div>
+              <div class="match-stats">
+                <p>${duration}</p>
+                <p class="kda-ratio">KDA: ${match.kda}</p>
+              </div>
+            </div>
+          `;
+        }).join('');
+
+        // Show profile content
+        document.getElementById('profile-content').style.display = 'block';
+      }
 
       document.addEventListener('DOMContentLoaded', function () {
+        // Load profile data on page load
+        loadProfileData();
         const lookupBtn = document.getElementById('lookup-btn');
         const summonerNameInput = document.getElementById('summoner-name');
         const regionSelect = document.getElementById('region');
