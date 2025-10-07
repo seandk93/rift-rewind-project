@@ -11,13 +11,129 @@
       <section class="hero">
         <img src="profile-photo.svg" alt="Your Name" class="profile-photo" />
         <h1>Sean Kim</h1>
-        <p class="tagline">Cloud Builder & AWS Enthusiast</p>
+        <p class="tagline">
+          Cloud Builder & AWS Enthusiast & Passionate LoL player
+        </p>
         <a
           href="https://builder.aws.com/community/@seandk93"
           target="_blank"
           class="aws-link"
           >AWS Builder Center Profile</a
         >
+
+        <!-- League of Legends Account Info -->
+        <div class="lol-account-section">
+          <h3>My League of Legends Profile</h3>
+          <div class="lol-profile-container">
+            <!-- Summoner Info Card -->
+            <div class="lol-summoner-card">
+              <div class="summoner-header">
+                <div class="summoner-icon">
+                  <img src="https://via.placeholder.com/100x100/c89b3c/ffffff?text=Icon" alt="Summoner Icon" />
+                </div>
+                <div class="summoner-details">
+                  <h4 class="summoner-name">Hide on bush</h4>
+                  <p class="summoner-tag">#KR1</p>
+                  <p class="summoner-level">Level 537</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Rank Info Card -->
+            <div class="lol-rank-card">
+              <div class="rank-header">
+                <img src="https://via.placeholder.com/120x120/c89b3c/ffffff?text=Rank" alt="Rank Emblem" class="rank-emblem" />
+                <div class="rank-details">
+                  <h4>Ranked Solo/Duo</h4>
+                  <p class="rank-tier">Challenger</p>
+                  <p class="rank-lp">1,247 LP</p>
+                  <p class="rank-winrate">234W 189L (55.3%)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent Match History -->
+          <div class="match-history">
+            <h4>Recent Matches</h4>
+            <div class="matches-container">
+              <div class="match-card win">
+                <div class="match-result">Victory</div>
+                <div class="match-info">
+                  <img src="https://via.placeholder.com/48x48/c89b3c/ffffff?text=C" alt="Champion" class="match-champion-icon" />
+                  <div class="match-details">
+                    <p class="champion-name">Yasuo</p>
+                    <p class="match-kda">12 / 3 / 8</p>
+                  </div>
+                </div>
+                <div class="match-stats">
+                  <p>23m 14s</p>
+                  <p class="match-date">2 hours ago</p>
+                </div>
+              </div>
+
+              <div class="match-card loss">
+                <div class="match-result">Defeat</div>
+                <div class="match-info">
+                  <img src="https://via.placeholder.com/48x48/c89b3c/ffffff?text=C" alt="Champion" class="match-champion-icon" />
+                  <div class="match-details">
+                    <p class="champion-name">Zed</p>
+                    <p class="match-kda">8 / 7 / 4</p>
+                  </div>
+                </div>
+                <div class="match-stats">
+                  <p>31m 42s</p>
+                  <p class="match-date">5 hours ago</p>
+                </div>
+              </div>
+
+              <div class="match-card win">
+                <div class="match-result">Victory</div>
+                <div class="match-info">
+                  <img src="https://via.placeholder.com/48x48/c89b3c/ffffff?text=C" alt="Champion" class="match-champion-icon" />
+                  <div class="match-details">
+                    <p class="champion-name">Akali</p>
+                    <p class="match-kda">15 / 2 / 6</p>
+                  </div>
+                </div>
+                <div class="match-stats">
+                  <p>28m 03s</p>
+                  <p class="match-date">1 day ago</p>
+                </div>
+              </div>
+
+              <div class="match-card win">
+                <div class="match-result">Victory</div>
+                <div class="match-info">
+                  <img src="https://via.placeholder.com/48x48/c89b3c/ffffff?text=C" alt="Champion" class="match-champion-icon" />
+                  <div class="match-details">
+                    <p class="champion-name">Yone</p>
+                    <p class="match-kda">10 / 5 / 12</p>
+                  </div>
+                </div>
+                <div class="match-stats">
+                  <p>35m 21s</p>
+                  <p class="match-date">1 day ago</p>
+                </div>
+              </div>
+
+              <div class="match-card loss">
+                <div class="match-result">Defeat</div>
+                <div class="match-info">
+                  <img src="https://via.placeholder.com/48x48/c89b3c/ffffff?text=C" alt="Champion" class="match-champion-icon" />
+                  <div class="match-details">
+                    <p class="champion-name">LeBlanc</p>
+                    <p class="match-kda">6 / 9 / 5</p>
+                  </div>
+                </div>
+                <div class="match-stats">
+                  <p>26m 47s</p>
+                  <p class="match-date">2 days ago</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section class="fun-facts">
@@ -37,15 +153,13 @@
           <div class="fact-card">
             <h4>🎯 Learning Goal</h4>
             <p>
-              Building my skills one AWS service at a time - S3, CloudFront, and
-              beyond!
+              Exploring AWS AI services including Bedrock and SageMaker to build intelligent cloud applications
             </p>
           </div>
           <div class="fact-card">
             <h4>💡 Fun Project</h4>
             <p>
-              This website is hosted on Amazon S3 with CloudFront for global
-              delivery!
+              This website is powered by AWS Amplify with serverless functions that integrate with the Riot Games API
             </p>
           </div>
         </div>
@@ -92,49 +206,66 @@
       </section>
       <!-- END CONTACT FORM SECTION -->
       <!-- LEAGUE DATA LOOKUP SECTION -->
-<section class="league-lookup">
-    <h3>League Data Lookup</h3>
-    <p>Enter a Riot ID to see their level and top champions!</p>
-    
-    <!-- Lookup message container for success/error messages -->
-    <div id="lookup-message" class="lookup-message" style="display: none;"></div>
-    
-    <div class="lookup-form-container">
-        <!-- Riot ID lookup form -->
-        <div class="form-group">
+      <section class="league-lookup">
+        <h3>League Data Lookup</h3>
+        <p>Enter a Riot ID to see their level and top champions!</p>
+
+        <!-- Lookup message container for success/error messages -->
+        <div
+          id="lookup-message"
+          class="lookup-message"
+          style="display: none"
+        ></div>
+
+        <div class="lookup-form-container">
+          <!-- Riot ID lookup form -->
+          <div class="form-group">
             <label for="summoner-name">Riot ID</label>
-            <input type="text" id="summoner-name" name="summoner-name" placeholder="GameName#TAG (e.g., Hide on bush#KR1)" required>
-            <small style="color: #687078; display: block; margin-top: 4px;">Format: GameName#TAG</small>
-        </div>
-        <div class="form-group">
+            <input
+              type="text"
+              id="summoner-name"
+              name="summoner-name"
+              placeholder="GameName#TAG (e.g., Hide on bush#KR1)"
+              required
+            />
+            <small style="color: #687078; display: block; margin-top: 4px"
+              >Format: GameName#TAG</small
+            >
+          </div>
+          <div class="form-group">
             <label for="region">Region</label>
             <select id="region" name="region">
-                <option value="na1">North America</option>
-                <option value="euw1">Europe West</option>
-                <option value="eun1">Europe Nordic & East</option>
-                <option value="kr">Korea</option>
-                <option value="br1">Brazil</option>
-                <option value="la1">Latin America North</option>
-                <option value="la2">Latin America South</option>
-                <option value="oc1">Oceania</option>
-                <option value="tr1">Turkey</option>
-                <option value="ru">Russia</option>
-                <option value="jp1">Japan</option>
+              <option value="na1">North America</option>
+              <option value="euw1">Europe West</option>
+              <option value="eun1">Europe Nordic & East</option>
+              <option value="kr">Korea</option>
+              <option value="br1">Brazil</option>
+              <option value="la1">Latin America North</option>
+              <option value="la2">Latin America South</option>
+              <option value="oc1">Oceania</option>
+              <option value="tr1">Turkey</option>
+              <option value="ru">Russia</option>
+              <option value="jp1">Japan</option>
             </select>
+          </div>
+          <!-- Lookup submit button -->
+          <button type="button" id="lookup-btn" class="lookup-submit-btn">
+            Look Up Summoner
+          </button>
         </div>
-        <!-- Lookup submit button -->
-        <button type="button" id="lookup-btn" class="lookup-submit-btn">Look Up Summoner</button>
-    </div>
 
-    <!-- Results display area -->
-    <div id="summoner-results" class="summoner-results" style="display: none;">
-        <h4>Summoner Info</h4>
-        <div id="summoner-info"></div>
-        <div id="champion-mastery"></div>
-    </div>
-</section>
-<!-- END LEAGUE DATA LOOKUP SECTION -->
-
+        <!-- Results display area -->
+        <div
+          id="summoner-results"
+          class="summoner-results"
+          style="display: none"
+        >
+          <h4>Summoner Info</h4>
+          <div id="summoner-info"></div>
+          <div id="champion-mastery"></div>
+        </div>
+      </section>
+      <!-- END LEAGUE DATA LOOKUP SECTION -->
     </main>
 
     <footer>
@@ -143,80 +274,84 @@
 
     <!-- Contact form JavaScript -->
     <script src="script.js"></script>
-<script>
-    // League Data Lookup - Calls Riot API via Lambda
-    const RIOT_API_URL = 'https://uj2tjezxirzjz3jupprboi3s7a0qfcxd.lambda-url.ap-southeast-2.on.aws/'; // Replace with your Function URL
-    
-    document.addEventListener('DOMContentLoaded', function() {
+    <script>
+      // League Data Lookup - Calls Riot API via Lambda
+      const RIOT_API_URL =
+        'https://uj2tjezxirzjz3jupprboi3s7a0qfcxd.lambda-url.ap-southeast-2.on.aws/'; // Replace with your Function URL
+
+      document.addEventListener('DOMContentLoaded', function () {
         const lookupBtn = document.getElementById('lookup-btn');
         const summonerNameInput = document.getElementById('summoner-name');
         const regionSelect = document.getElementById('region');
-        
-        lookupBtn.addEventListener('click', async function() {
-            const summonerName = summonerNameInput.value.trim();
-            const region = regionSelect.value;
-            const messageDiv = document.getElementById('lookup-message');
-            const resultsDiv = document.getElementById('summoner-results');
-            
-            if (!summonerName) {
-                showMessage('Please enter a Riot ID', 'error');
-                return;
+
+        lookupBtn.addEventListener('click', async function () {
+          const summonerName = summonerNameInput.value.trim();
+          const region = regionSelect.value;
+          const messageDiv = document.getElementById('lookup-message');
+          const resultsDiv = document.getElementById('summoner-results');
+
+          if (!summonerName) {
+            showMessage('Please enter a Riot ID', 'error');
+            return;
+          }
+
+          if (!summonerName.includes('#')) {
+            showMessage('Please use Riot ID format: GameName#TAG', 'error');
+            return;
+          }
+
+          // Show loading state
+          lookupBtn.textContent = 'Looking up...';
+          lookupBtn.disabled = true;
+          messageDiv.style.display = 'none';
+          resultsDiv.style.display = 'none';
+
+          try {
+            const response = await fetch(RIOT_API_URL, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                summonerName: summonerName,
+                region: region,
+              }),
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+              displaySummonerData(data);
+              showMessage('Summoner found!', 'success');
+            } else {
+              showMessage(
+                data.error || 'Failed to fetch summoner data',
+                'error'
+              );
             }
-            
-            if (!summonerName.includes('#')) {
-                showMessage('Please use Riot ID format: GameName#TAG', 'error');
-                return;
-            }
-            
-            // Show loading state
-            lookupBtn.textContent = 'Looking up...';
-            lookupBtn.disabled = true;
-            messageDiv.style.display = 'none';
-            resultsDiv.style.display = 'none';
-            
-            try {
-                const response = await fetch(RIOT_API_URL, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        summonerName: summonerName,
-                        region: region
-                    })
-                });
-                
-                const data = await response.json();
-                
-                if (response.ok) {
-                    displaySummonerData(data);
-                    showMessage('Summoner found!', 'success');
-                } else {
-                    showMessage(data.error || 'Failed to fetch summoner data', 'error');
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                showMessage('Network error. Please try again.', 'error');
-            }
-            
-            // Reset button
-            lookupBtn.textContent = 'Look Up Summoner';
-            lookupBtn.disabled = false;
+          } catch (error) {
+            console.error('Error:', error);
+            showMessage('Network error. Please try again.', 'error');
+          }
+
+          // Reset button
+          lookupBtn.textContent = 'Look Up Summoner';
+          lookupBtn.disabled = false;
         });
-        
+
         // Enter key support
-        summonerNameInput.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                lookupBtn.click();
-            }
+        summonerNameInput.addEventListener('keypress', function (e) {
+          if (e.key === 'Enter') {
+            lookupBtn.click();
+          }
         });
-    });
-    
-    function displaySummonerData(data) {
+      });
+
+      function displaySummonerData(data) {
         const resultsDiv = document.getElementById('summoner-results');
         const summonerInfo = document.getElementById('summoner-info');
         const championMastery = document.getElementById('champion-mastery');
-        
+
         // Display summoner info
         summonerInfo.innerHTML = `
             <div class="summoner-card">
@@ -224,43 +359,47 @@
                 <p>Level: ${data.summoner.level}</p>
             </div>
         `;
-        
+
         // Display top champions
         if (data.topChampions && data.topChampions.length > 0) {
-            const championsHtml = data.topChampions.map(champ => `
+          const championsHtml = data.topChampions
+            .map(
+              (champ) => `
                 <div class="champion-card">
                     <p><strong>Champion ID:</strong> ${champ.championId}</p>
-                    <p><strong>Mastery Level:</strong> ${champ.championLevel}</p>
+                    <p><strong>Mastery Level:</strong> ${
+                      champ.championLevel
+                    }</p>
                     <p><strong>Mastery Points:</strong> ${champ.championPoints.toLocaleString()}</p>
                 </div>
-            `).join('');
-            
-            championMastery.innerHTML = `
+            `
+            )
+            .join('');
+
+          championMastery.innerHTML = `
                 <h5>Top Champions</h5>
                 <div class="champions-grid">
                     ${championsHtml}
                 </div>
             `;
         } else {
-            championMastery.innerHTML = '<p>No champion mastery data found.</p>';
+          championMastery.innerHTML = '<p>No champion mastery data found.</p>';
         }
-        
+
         resultsDiv.style.display = 'block';
-    }
-    
-    function showMessage(text, type) {
+      }
+
+      function showMessage(text, type) {
         const messageDiv = document.getElementById('lookup-message');
         messageDiv.textContent = text;
         messageDiv.className = `lookup-message ${type}`;
         messageDiv.style.display = 'block';
-        
+
         // Auto-hide after 10 seconds
         setTimeout(() => {
-            messageDiv.style.display = 'none';
+          messageDiv.style.display = 'none';
         }, 10000);
-    }
-</script>
-
-
+      }
+    </script>
   </body>
 </html>
